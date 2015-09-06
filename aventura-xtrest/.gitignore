@@ -1,2 +1,3 @@
 /target/
 /src/main/generated-sources
+/src/main/webapp/node_modules

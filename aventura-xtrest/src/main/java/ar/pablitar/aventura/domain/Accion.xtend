@@ -1,4 +1,4 @@
-package ar.pablitar.aventura
+package ar.pablitar.aventura.domain
 
 interface Accion {
 	def String describir()

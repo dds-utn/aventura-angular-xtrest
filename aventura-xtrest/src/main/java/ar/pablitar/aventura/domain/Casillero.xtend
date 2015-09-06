@@ -1,4 +1,4 @@
-package ar.pablitar.aventura
+package ar.pablitar.aventura.domain
 
 import java.util.Map
 
@@ -10,7 +10,7 @@ class Casillero {
 		if (casillerosAdjacentes.containsKey(Direccion)) {
 			j.posicion = casillerosAdjacentes.get(direccion)
 		} else {
-			throw new BusinessException("El jugador no puede moverse en " + direccion.toString)
+			throw new ar.pablitar.aventura.BusinessException("El jugador no puede moverse en " + direccion.toString)
 		}
 	}
 	

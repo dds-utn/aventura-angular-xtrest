@@ -1,4 +1,4 @@
-package ar.pablitar.aventura
+package ar.pablitar.aventura.domain
 
 import org.eclipse.xtend.lib.annotations.Accessors
 
@@ -16,5 +16,5 @@ class Jugador {
 	def accionesDisponibles() {
 		posicion.movimientosDisponibles.map[Acciones.mover(it)]
 	}
-	
+
 }

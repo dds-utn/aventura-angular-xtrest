@@ -1,4 +1,4 @@
-package ar.pablitar.aventura;
+package ar.pablitar.aventura.domain;
 
 public enum Direccion {
 	IZQUIERDA,

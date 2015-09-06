@@ -1,0 +1,22 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Asignacion de tareas",
+  "main": "index.html",
+  "dependencies": {
+    "angular": "^1.4.1",
+    "angular-ui-router": "^0.2.15",
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angularjs"
+  ],
+  "author": "",
+  "license": "ISC"
+}
