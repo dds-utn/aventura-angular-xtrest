@@ -1,2 +1,1 @@
-
-var aventuraApp = angular.module("AventuraApp", ['ui.router']);
+var aventuraApp = angular.module("AventuraApp", [ 'ui.router' ]);

@@ -8,7 +8,7 @@ interface Accion {
 
 class Mover implements Accion {
 
-	Direccion direccion
+	val Direccion direccion
 
 	new(Direccion d) {
 		this.direccion = d;
@@ -19,7 +19,7 @@ class Mover implements Accion {
 	}
 
 	override aplicarPara(Jugador jugador) {
-		jugador.posicion.moverEn(this.direccion, jugador)
+		jugador.moverEn(this.direccion)
 	}
 
 }

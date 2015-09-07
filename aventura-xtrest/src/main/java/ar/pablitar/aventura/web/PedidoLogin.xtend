@@ -1,8 +1,8 @@
 package ar.pablitar.aventura.web
 
-import org.eclipse.xtend.lib.annotations.Data
+import org.eclipse.xtend.lib.annotations.Accessors
 
-@Data
 class PedidoLogin {
-	String pedido
+	@Accessors
+	String nombre
 }
