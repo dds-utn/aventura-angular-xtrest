@@ -16,7 +16,7 @@ aventuraApp.config(function($stateProvider, $urlRouterProvider) {
       controller : 'AventurasController as aventurasCtrl',
       resolve : {
         aventurasData: function(aventurasService) {
-          aventurasService.getAll();
+          return aventurasService.getAll();
         }
       }
     });

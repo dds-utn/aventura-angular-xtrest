@@ -8,9 +8,11 @@ import org.uqbar.xtrest.json.JSONUtils
 import ar.pablitar.aventura.domain.Jugador
 import static ar.pablitar.aventura.repos.ConfiguredDependencies.*
 import org.uqbar.xtrest.http.ContentType
+import org.uqbar.xtrest.api.annotation.Get
+import javax.servlet.http.HttpServletRequest
 
 @Controller
-class LoginController {
+class MainController {
 	extension JSONUtils = new JSONUtils
 	
 	@Post("/login")
@@ -20,4 +22,17 @@ class LoginController {
 		response.contentType = ContentType.APPLICATION_JSON
 		ok(new RespuestaLogin(j).toJson)
 	}
+	
+	@Get("/aventuras")
+	def Result getAventuras() {
+		var Jugador j = repoJugadores.encontrarPorNombre(getCookie(request, "usuario"))
+		response.contentType = ContentType.APPLICATION_JSON
+		ok(new ListadoAventuras(j, repoAventuras.allInstances).toJson)				
+	}
+	
+	def getCookie(HttpServletRequest request, String string) {
+		request.cookies.findFirst[it.name == string].value	
+	}
+	
+	
 }

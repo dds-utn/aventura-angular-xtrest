@@ -1,1 +1,36 @@
-<div></div>
+<div class="col-xs-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2>Elija la aventura!</h2>
+		</div>
+
+		<div class="panel-body">
+			<div class="adventure-selector col-md-4">
+				<div class="form-group">
+					<label for="usuario">Aventuras </label> <select
+						class="form-control" id="aventuraSeleccionada" size="15"
+						ng-model="aventuraSeleccionada"
+						ng-options="aventura.nombre for aventura in aventuras">
+
+					</select>
+				</div>
+			</div>
+			<div class="adventure-detail col-md-8">
+				<h3>Nombre</h3>
+				<p>{{aventuraSeleccionada.nombre}}</p>
+				<h3>Descripcion</h3>
+				<p>{{aventuraSeleccionada.descripcion}}</p>
+			</div>
+		</div>
+		<div class="panel-footer acciones-aventuras">
+			<div class="seccion-footer">
+				<h4>Aventura Actual:</h4>
+				<p>{{aventuraActual}}</p>
+			</div>
+			<div class="seccion-footer text-right">
+				<button class="btn btn-default" ng-disabled="!aventuraActual">Continuar Actual</button>
+				<button class="btn btn-primary">Comenzar Seleccionada</button>
+			</div>
+		</div>
+	</div>
+</div>
