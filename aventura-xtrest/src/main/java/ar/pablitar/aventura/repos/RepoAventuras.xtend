@@ -13,4 +13,9 @@ class RepoAventuras extends GenericCollectionRepo<Aventura> {
 		 new CasilleroBuilder()
 		 	.descripcion("Estás en el cuarto piso, aula 424. Desesperado por un café")))				
 	}
+	
+	def encontrarPorNombre(String unNombre) {
+		this.findByPredicate[it.nombre == unNombre]
+	}
+	
 }

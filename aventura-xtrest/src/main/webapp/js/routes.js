@@ -19,5 +19,11 @@ aventuraApp.config(function($stateProvider, $urlRouterProvider) {
           return aventurasService.getAll();
         }
       }
+    })
+    .state('jugarAventura', {
+      url : '/jugarAventura',
+      templateUrl : 'templates/jugarAventura.html',
+      controller : 'JugarAventuraController as jugarCtrl',
+      resolve : {}
     });
 });

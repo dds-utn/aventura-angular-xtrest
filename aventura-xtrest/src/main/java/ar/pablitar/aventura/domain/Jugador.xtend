@@ -29,5 +29,9 @@ class Jugador {
 	def moverEn(Direccion direccion) {
 		posicion.get.moverEn(direccion, this)
 	}
+	
+	def comenzarAventura(Aventura unaAventura) {
+		this.posicion = Optional.of(unaAventura.casilleroInicial)
+	}
 
 }

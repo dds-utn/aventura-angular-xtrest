@@ -10,7 +10,12 @@ class Aventura {
 	String descripcion
 	
 	@JsonIgnore
+	@Accessors
 	Casillero casilleroInicial
+	
+	new() {
+		
+	}
 	
 	new(String nombre, String descripcion, CasilleroBuilder builder) {
 		this.nombre = nombre
