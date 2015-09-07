@@ -3,18 +3,25 @@ package ar.pablitar.aventura.domain
 import ar.pablitar.aventura.BusinessException
 import java.util.Map
 import org.eclipse.xtend.lib.annotations.Accessors
+import com.fasterxml.jackson.annotation.JsonIgnore
 
 class Casillero {
 	
 	@Accessors
+	String titulo
+	
+	@Accessors
 	String descripcion
 
+	@JsonIgnore
 	Map<Direccion, Casillero> casillerosAdjacentes = newHashMap()
 	
 	@Accessors
+	@JsonIgnore
 	Aventura aventura
 	
-	new(String descripcion, Aventura aventura) {
+	new(String titulo, String descripcion, Aventura aventura) {
+		this.titulo = titulo
 		this.descripcion = descripcion
 		this.aventura = aventura
 	}

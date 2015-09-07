@@ -6,4 +6,7 @@ var aventurasService = aventuraApp.service('aventurasService', [ '$http',
       this.comenzarAventura = function(aventura) {
         return $http.post('/comenzarAventura', aventura);
       };
+      this.getJuegoActual = function() {
+        return $http.get('/juegoActual');
+      };
     }]);

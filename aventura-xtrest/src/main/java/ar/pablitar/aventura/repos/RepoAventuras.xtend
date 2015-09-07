@@ -11,6 +11,7 @@ class RepoAventuras extends GenericCollectionRepo<Aventura> {
 		 "La facultad",
 		 "Facultad Regional Buenos Aires, sede medrano, la aventura de pedir el café",
 		 new CasilleroBuilder()
+		 	.nombre("Aula 424")
 		 	.descripcion("Estás en el cuarto piso, aula 424. Desesperado por un café")))				
 	}
 	

@@ -41,11 +41,18 @@ class MainController {
 		var Aventura pedidoAventura = body.fromJson(Aventura)
 		var Aventura aventura = repoAventuras.encontrarPorNombre(pedidoAventura.nombre)
 		obtenerJugador(request).comenzarAventura(aventura)
-		ok()	
+		ok	
 	}
 	
 	def getCookie(HttpServletRequest request, String string) {
 		request.cookies.findFirst[it.name == string].value	
+	}
+	
+	@Get("/juegoActual")
+	def Result juegoActual() {
+		var Jugador j = obtenerJugador(request)
+		response.contentType = ContentType.APPLICATION_JSON
+		ok(new JuegoActual(j).toJson)
 	}
 	
 	

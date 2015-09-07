@@ -11,21 +11,31 @@ var loginController = aventuraApp.controller('LoginController', [ '$scope',
     } ]);
 
 var listarAventurasController = aventuraApp.controller('AventurasController', [
-    'aventurasData', '$scope', 'aventurasService', '$state', function(aventurasData, $scope, aventurasService, $state) {
-        var aventuras = aventurasData.data.aventuras;
-        $scope.aventuraSeleccionada = aventuras[0];
-        $scope.aventuraActual = aventurasData.data.aventuraActual;
-        $scope.aventuras = aventurasData.data.aventuras;
-        
-        $scope.continuarActual = function() {
-          $state.go('jugarAventura')
-        };
-        
-        $scope.comenzarAventura = function() {
-          aventurasService
-            .comenzarAventura($scope.aventuraSeleccionada)
-            .success(function() {
+    'aventurasData',
+    '$scope',
+    'aventurasService',
+    '$state',
+    function(aventurasData, $scope, aventurasService, $state) {
+      var aventuras = aventurasData.data.aventuras;
+      $scope.aventuraSeleccionada = aventuras[0];
+      $scope.aventuraActual = aventurasData.data.aventuraActual;
+      $scope.aventuras = aventurasData.data.aventuras;
+
+      $scope.continuarActual = function() {
+        $state.go('jugarAventura')
+      };
+
+      $scope.comenzarAventura = function() {
+        aventurasService.comenzarAventura($scope.aventuraSeleccionada).success(
+            function() {
               $scope.continuarActual();
             });
-        };
+      };
+    } ]);
+
+var jugarAventuraController = aventuraApp.controller('JugarAventuraController',
+    [ '$scope', 'juegoActualData', function($scope, juegoActualData) {
+      juegoActualData
+      $scope.aventuraActual = juegoActualData.data.aventuraActual;
+      $scope.casilleroActual = juegoActualData.data.casilleroActual;
     } ]);
