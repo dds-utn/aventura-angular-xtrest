@@ -39,3 +39,11 @@ var jugarAventuraController = aventuraApp.controller('JugarAventuraController',
       $scope.aventuraActual = juegoActualData.data.aventuraActual;
       $scope.casilleroActual = juegoActualData.data.casilleroActual;
     } ]);
+
+var redirectController = aventuraApp.controller('RedirectController', ['$state', function($state) {
+    if(document.cookie.indexOf('usuario') >= 0) {
+      $state.go('listarAventuras');
+    } else {
+      $state.go('login');
+    }
+}]);

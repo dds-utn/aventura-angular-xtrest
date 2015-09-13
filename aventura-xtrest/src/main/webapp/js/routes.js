@@ -2,9 +2,13 @@
 
 aventuraApp.config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/login");
+  $urlRouterProvider.otherwise("/redirect");
 
   $stateProvider
+    .state('redirect', {
+      url: '/redirect',
+      controller: 'RedirectController as redirectCtrl'  
+    })
     .state('login', {
       url : '/login',
       templateUrl : 'templates/login.html',
@@ -15,9 +19,9 @@ aventuraApp.config(function($stateProvider, $urlRouterProvider) {
       templateUrl : 'templates/listarAventuras.html',
       controller : 'AventurasController as aventurasCtrl',
       resolve : {
-        aventurasData: function(aventurasService) {
+        aventurasData: ['aventurasService', function(aventurasService) {
           return aventurasService.getAll();
-        }
+        }]
       }
     })
     .state('jugarAventura', {
